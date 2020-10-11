@@ -12,9 +12,9 @@ public class ProductDaoImpl implements ProductDao {
     public static List<Product> products = new ArrayList<>();
 
     static {
-        products.add(new Product(1, "Phone", 160));
-        products.add(new Product(2, "PS5", 8000));
-        products.add(new Product(3, "Laptop", 9000));
+        products.add(new Product(1, "Phone", 160, 100));
+        products.add(new Product(2, "PS5", 8000, 7000));
+        products.add(new Product(3, "Laptop", 9000, 8000));
     }
 
     @Override
