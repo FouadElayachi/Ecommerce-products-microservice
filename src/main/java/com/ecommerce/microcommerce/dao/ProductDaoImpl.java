@@ -24,7 +24,10 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Product findById(int id) {
-        return (Product) products.stream().filter(product -> product.getId() == id);
+        for(Product product: products) {
+            if(product.getId() == id) return product;
+        }
+        return null;
     }
 
     @Override
