@@ -24,11 +24,12 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Product findById(int id) {
-        return null;
+        return (Product) products.stream().filter(product -> product.getId() == id);
     }
 
     @Override
     public Product save(Product product) {
-        return null;
+        products.add(product);
+        return product;
     }
 }
