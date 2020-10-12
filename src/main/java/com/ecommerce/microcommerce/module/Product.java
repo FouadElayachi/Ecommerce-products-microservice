@@ -1,9 +1,8 @@
 package com.ecommerce.microcommerce.module;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(value = {"id", "purchasePrice"})
+@JsonIgnoreProperties(value = {"purchasePrice"})
 public class Product {
     //Hidden variable
     private int id;
