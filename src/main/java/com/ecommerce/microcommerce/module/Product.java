@@ -1,19 +1,23 @@
 package com.ecommerce.microcommerce.module;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-//@JsonIgnoreProperties(value = {"purchasePrice"})
+@JsonIgnoreProperties(value = {"purchasePrice"})
 @Entity
 public class Product {
 
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private int id;
+
+    @Length(min=3, max=20, message = "The number of character in name property should be between 3 and 20")
     private String name;
+
     private double price;
     //Hidden variable
     private double purchasePrice;
