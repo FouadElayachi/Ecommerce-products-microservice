@@ -46,6 +46,6 @@ public class ProductController {
 
     @GetMapping(value = "products/greater/{priceLimit}")
     public List<Product> getProductsGreaterThanPrice(@PathVariable double priceLimit) {
-        return productDao.findByPriceGreaterThan(priceLimit);
+        return productDao.searchProductGreaterThanLimitPrice(priceLimit);
     }
 }
