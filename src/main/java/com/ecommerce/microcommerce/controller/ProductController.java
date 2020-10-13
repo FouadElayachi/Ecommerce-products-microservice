@@ -3,6 +3,8 @@ package com.ecommerce.microcommerce.controller;
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.exceptions.ProductNotFoundException;
 import com.ecommerce.microcommerce.module.Product;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
+@Api(description = "Products management")
 @RestController
 public class ProductController {
 
@@ -23,6 +26,7 @@ public class ProductController {
         return productDao.findAll();
     }
 
+    @ApiOperation(value = "Get a product by id")
     @GetMapping(value = "products/{id}")
     public Product showProduct(@PathVariable int id) {
         Product product = productDao.findById(id);
