@@ -2,9 +2,16 @@ package com.ecommerce.microcommerce.module;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(value = {"purchasePrice"})
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+//@JsonIgnoreProperties(value = {"purchasePrice"})
+@Entity
 public class Product {
-    //Hidden variable
+
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private double price;
@@ -16,6 +23,10 @@ public class Product {
         this.name = name;
         this.price = price;
         this.purchasePrice = purchasePrice;
+    }
+
+    public Product() {
+
     }
 
     public int getId() {
