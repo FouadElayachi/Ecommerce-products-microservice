@@ -43,4 +43,9 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
+
+    @GetMapping(value = "products/greater/{priceLimit}")
+    public List<Product> getProductsGreaterThanPrice(@PathVariable double priceLimit) {
+        return productDao.findByPriceGreaterThan(priceLimit);
+    }
 }
